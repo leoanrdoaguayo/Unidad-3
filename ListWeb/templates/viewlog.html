@@ -1,0 +1,55 @@
+{%extends 'base.html'%}
+{%  block body %}
+    <h2>{{ the_tittle }}</h2>
+    <table>
+    <tr>
+        {% for row_tittle in the_row_tittles %}
+            <th>{{ row_tittle }}</th>
+        {% endfor %}
+    </tr>
+    {% for log_row in the_data %}
+        <tr>
+            {% for item in log_row %}
+                <td>{{ item }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </table>
+<form action="/eliminar" method="post">
+    <b>Eliminar registro</b>
+    <input type="number" name="eliminar">
+    <button>Eliminar</button>
+
+</form>
+
+            <!--Apartado de Actualizar -->
+
+
+
+<form action="/actualizar" method="post">
+    <table>
+        <p>Actualizar Registro</p>
+        <tr>
+            <p>Selecconar id:</p>
+            <input type="number" name="id">
+            <p>Nombre:</p>
+            <input type="text" name="nombre">
+            <p>Apellido:</p>
+            <input type="text" name="apellido">
+            <p>NIF:</p>
+            <input type="text" name="nif">
+            <p>SEG Social:</p>
+            <input type="text" name="seg">
+            <p>Departamento:</p>
+            <input type="text" name="departamento">
+            <p>Puesto:</p>
+            <input type="text" name="puesto">
+        </tr>
+    </table>
+     <p>When you're ready, click this button</p>
+     <p><input type="submit" name="btn_actualizar" value="Actualizar!"></p>
+</form>
+
+
+
+{% endblock body %}

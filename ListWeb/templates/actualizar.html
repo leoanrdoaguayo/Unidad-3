@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block body %}
+<h2>{{the_title_actualizar}}</h2>
+<!-- Direccion a depositar valores para que realise la operacion -->
+<form action="/actualizar" method="post">
+    <table>
+        <p>Use thes form to submit the data to insertar data in the table empleado</p>
+        <tr>
+            <p>Nombre:</p>
+            <input type="text" name="nombre">
+            <p>Apellido:</p>
+            <input type="text" name="apellido">
+            <p>NIF:</p>
+            <input type="text" name="nif">
+            <p>SEG Social:</p>
+            <input type="text" name="seg">
+            <p>Departamento:</p>
+            <input type="text" name="departamento">
+            <p>Puesto:</p>
+            <input type="text" name="puesto">
+        </tr>
+    </table>
+     <p>When you're ready, click this button</p>
+     <p><input type="submit" name="btn_calculate" value="Guardar!"></p>
+</form>
+{% endblock body %}
